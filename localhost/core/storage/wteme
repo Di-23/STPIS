@@ -1,0 +1,2 @@
+sql_file = "/core/storage/data.sqlite"
+enabled = "true"

@@ -1,0 +1,3 @@
+<?
+class regException extends MException { }
+?>

@@ -1,0 +1,981 @@
+//colors
+$color_0: #5a5a5a;
+$color_1: #fafafa/*#f9f9f9*/;
+$color_2: #555;
+$color_3: #fff;
+$color_4: #777;
+$color_6: #e22d2d;
+$color_7: rgba(0,0,0,0.14);
+$color_8: rgba(0,0,0,0.09);
+$color_9: rgba(0,0,0,0.12);
+$color_10: #000;
+
+$color_11: #d65032;
+$color_12: #fd6745;
+
+$color_13: #aaa;
+$color_14: #ddd;
+$color_15: #ff3f3f;
+$color_16: #222222;
+$color_17: #999;
+$color_18: rgba(0,0,0,0.4);
+$color_19: #2a5885;
+$color_20: #343a40;
+$color_21: #212529;
+$color_22: #e9ecef;
+
+$color_65: #464646;
+$color_25: #989898;
+
+//urls
+$url_0: url(/core/theme/assets/media/system/drop.svg);
+$url_1: url(/core/theme/assets/media/system/play.svg);
+$url_2: url(/core/theme/assets/media/system/pause.svg);
+
+i, .stars a {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	font-size: inherit;
+}
+
+html{
+    height:100% !important;
+    width:100% !important;
+	main, .container, .row{
+		height:100%;
+	}
+}
+.container.row{
+	height:100%; 
+}
+.container,.container-fluid{
+	height:100%;
+}
+.col-md-3, .col-md-4, .col-md-6, .col-md-8,.col-md-9,.col-md-10, .col-md-12{
+	height:100%;
+}
+body {
+	padding-top: 3rem;
+	height: 100%;
+	color: $color_0;
+	background: $color_1;
+	font-size: 14px;
+}
+.nav-dark{
+	background: $color_20;
+}
+
+main{
+    width:100%;
+}
+
+.mobile-card{
+	height: auto !important;
+}
+.liked>i{
+    color: $color_6 !important;
+}
+
+.navbar{
+	min-height: 3rem;
+}
+/*
+::-webkit-scrollbar {
+	display: none;
+}
+::-webkit-scrollbar-track-piece {
+	background-color: transparent;
+	position: relative;
+	}*/
+i.post_btn{
+	text-shadow: 1px 1px 2px $color_18, 0 0 1px $color_18;
+	color: $color_3;
+}
+i{
+	/*color: $color_3;*/
+}
+p.link{
+	font-size: 14px;
+	white-space: nowrap;
+}
+p {
+	align: center;
+	/*display: inline-block;*/
+	color: $color_0;
+	/*
+	white-space: nowrap;
+	max-width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;*/
+        margin-bottom: 0;
+}
+a {
+	color: $color_3;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: color 0.3s ease-out;
+	&:hover {
+		color: $color_4;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: color 0.3s ease-out;
+		text-decoration: none;
+	}
+}
+.online{
+	/*box-shadow: 0px 0px 5px rgba(0, 244, 0, 0.7) !important;*/
+}
+
+.list-group-item.active{
+	z-index: 2;
+	color: $color_10;
+	background-color: $color_22;
+	border-color: $color_7;
+}
+
+.block-item{
+    border-top: 1px solid $color_8 !important;
+    padding: 8px;
+}
+
+/*
+
+Loading CSS
+*/
+.loading{
+	z-index: 9999;
+    opacity: 0;
+	top: 0px;
+	position: fixed;
+	visibility: hidden;
+	background: $color_8;
+	height: 100%;
+    transition: opacity 0.3s, visibility 0.3s;
+	&.show{
+	    opacity: 0.9;
+		visibility: visible;
+	    transition: opacity 0.1s, visibility 0.1s;
+	}
+}
+.lds-spinner {
+  color: official;
+  position: relative;
+  top: calc(50% - 32px);
+  margin-left: calc(50% - 32px);
+  width: 64px;
+  
+  height: 64px;
+}
+.lds-spinner div {
+  transform-origin: 32px 32px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 29px;
+  width: 5px;
+  height: 14px;
+  border-radius: 20%;
+  background: $color_10;
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/*
+End loading css
+*/
+.fixed{
+	position: fixed;
+}
+.form-control{
+	border: 0;
+	&:focus{
+		border-color: $color_2;
+	}
+}
+.btn:focus, .btn.focus{
+	box-shadow: none !important;
+}
+.btn, .form-control{
+	border-radius: 0;
+}
+.navbar-toggler{
+	border: 0;
+}
+.link {
+	color: $color_19;
+}
+.carousel {
+	margin-bottom: 4rem;
+}
+.carousel-caption {
+	bottom: 3rem;
+	z-index: 10;
+}
+
+.carousel-item {
+	height: 32rem;
+	//background-color: $color_4;
+	> img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		min-width: 100%;
+		height: 32rem;
+	}
+}
+.marketing {
+	.col-lg-4 {
+		margin-bottom: 1.5rem;
+		text-align: center;
+		p {
+			margin-right: .75rem;
+			margin-left: .75rem;
+		}
+	}
+	h2 {
+		font-weight: 400;
+	}
+}
+.small-divider {
+	margin: 0.9rem 0;
+}
+.featurette-divider {
+	margin: 0.4rem 0;/*margin: 1.2rem 0;*/
+}
+.featurette-heading {
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -.05rem;
+}
+@media(min-width: 40em) {
+	.featurette-heading {
+		font-size: 50px;
+	}
+	.carousel-caption p {
+		margin-bottom: 1.25rem;
+		font-size: 1.25rem;
+		line-height: 1.4;
+	}
+}
+@media(min-width: 62em) {
+	.featurette-heading {
+		margin-top: 7rem;
+	}
+}
+.liked {
+	color: $color_6;
+}
+.comment_btn {
+	margin-left: 1rem;
+}
+.lite_shadow{
+	box-shadow: 0 2px 2px 0 $color_7, 0 2px 1px -2px $color_8, 0 1px 5px 0 $color_9;
+}
+.avatar.avatar-mobile
+{
+	margin-bottom: 1rem;
+}
+.avatar {
+	width: 100%;
+	max-height: 400px;
+	margin: 0;
+	
+	img {
+		display: block;
+		width: 100%;
+		object-fit: cover;
+		margin: 0 auto;
+	}
+}
+.blind_label {
+	position: absolute;
+	/*overflow: hidden;*/
+}
+.navbar-light{
+    background: $color_3;
+}
+#msg_input{
+    width: calc(100% - 80px);
+}
+.dialog-filter{
+    border-bottom: 1px solid $color_8 !important; 
+}
+.smile{
+    line-height: 20px;
+    height: 30px;
+    padding: 5px;
+    width: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    float: left;
+    :hover{
+        background: $color_8;
+    }
+}
+.smiles-bar{
+    padding: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.3s linear;
+    position: absolute;
+    right: 3rem;
+    bottom: 4rem;
+    width: 258px;
+    height: 255px;
+    background: $color_3;
+}
+.smiles-bar:hover,.smiles-bar:focus,.smiles-bar:active .smiles-bar{
+  visibility: visible;
+  opacity: 1;
+}
+.smile_trigger:hover .smiles-bar{
+
+      visibility: visible;
+      opacity: 1;
+}
+
+.inp_button{
+    float: left;
+    width: 80px;
+    height: 3rem;
+    border-top: 1px solid $color_8; 
+    i{
+        float: left;
+        font-size: 24px;
+        color: $color_4;
+        height: 3rem;
+        width: 40px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 3rem;
+    }
+}
+.form-search {
+	background: $color_3;
+	border-bottom: 1px solid $color_8;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	/*border-radius: 20px;*/
+}
+abbr[title], acronym[title] {
+	border: 0 !important; 
+	text-decoration: none !important; 
+	}
+.form-search::placeholder {
+	color: $color_2;
+}
+.badge-icons {
+	background: $color_2;
+	color: $color_3;
+}
+.centerted-hor {
+	margin: auto;
+}
+.split_content{
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.split_content::-webkit-scrollbar {
+    width: 4px;
+}
+ 
+.split_content::-webkit-scrollbar-track {
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    //border-left: 1px solid $color_8
+}
+ 
+.split_content::-webkit-scrollbar-thumb {
+  background-color: $color_13;
+  //outline: 1px solid slategrey;
+}
+/*
+.split_content::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+	border-radius:0px;
+}
+.split_content::-webkit-scrollbar-thumb {
+    background-color: #eee;
+    padding: 1px;
+    border-radius:0px;
+}
+.split_content::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+*/
+/*
+Dialog
+***/
+.dlg_input{
+	width: 100%;
+}
+.dlg{
+	width: 100%;
+	display: block;
+	float: left;
+	padding: 9px 7px 8px 10px;
+	border-bottom: 1px solid #eee;
+	:hover{
+		background: #f5f7fa
+	}
+	&.active{
+		background: #5b88bd;
+		.dlg-span{
+			color: $color_3 !important;
+		}
+                p{
+                    color: $color_3 !important;
+                }
+	}
+	.dlg-img{
+		float: left;
+		min-width: 0px;
+		max-width: 45px;		
+		img{
+			width: 100%;
+		}
+	}
+	.dlg-span{
+		float: left;
+		font-size: 12px;
+		padding: 8px 0;
+		padding-left: 9px;
+		color: $color_10;
+		width: calc(100% - 55px);
+	}
+}
+
+
+/*
+Chat
+***/
+#msg_input{
+    border-top: 1px solid $color_8;
+}
+.chat_c_list{
+	padding-right: 0px;
+}
+.msg_right{
+	padding-left: 0px;
+        border-left: 1px solid $color_9;
+	.form-control{
+		height: 3rem;
+                border-bottom: 1px solid $color_8;
+	}
+	input{
+		height: 3rem;
+	}	
+}
+.chat_list{
+    width: 100%;
+    height: calc(100% - 6rem);
+}
+.form-control>img{
+	height: 100%;
+	margin-right: 5px;
+}
+.form-control>span{
+	font-size: 12px;
+	color: $color_4;
+}
+.chat_msg{
+    vertical-align: top;
+	width: 100%;
+	float: left;
+	padding: 1rem 1rem 0rem 1rem;
+	
+}
+
+.chat_out{
+	/*width: 70%;*/
+        width: max-content;
+	float: right;
+	p{
+		box-shadow: 0 2px 2px 0 $color_7, 0 3px 1px -2px $color_8, 0 1px 5px 0 $color_9;
+		font-size: 14px;
+		padding: 5px;
+		margin: 0;
+		color: $color_1;
+		background: #5b88bd;
+		/*border-radius: 4px;*/
+	}
+	span{
+		float: right;
+		font-size: 10px;
+		width: 100%;
+	}
+}
+/*
+.chat_in>p:before{
+	width: 0;
+	height: 0;
+	content: "";
+	top: 9px;
+	left: -20px;
+	position: relative;
+	border-style: solid;
+	border-width: 15px 0px 0px 20px;
+	border-color: $color_4 transparent transparent transparent;
+}*/
+.chat_in{
+	/*width: 70%;*/
+        width: min-content;
+	p{
+		box-shadow: 0 2px 2px 0 $color_7, 0 3px 1px -2px $color_8, 0 1px 5px 0 $color_9;
+		font-size: 14px;
+		padding: 5px;
+		margin: 0;
+                color: $color_10;
+		background: $color_1;
+		/*border-radius: 4px;*/
+	}
+	span{
+		font-size: 10px;
+		width: 100%;
+	}
+}
+
+/*
+End Chat
+***/
+.feed-logo {
+	width: 50px;
+	height: 50px;
+	margin-right: 1rem;
+}
+.heading-text {
+	font-size: 20px;
+	line-height: 25px;
+	font-weight: 400;
+	text-overflow: ellipsis;
+	padding-left: 1px;
+}
+@media(min-width:768px) {
+	.for-mobile {
+		display: none;
+	}
+	.for-desktop {
+		display: block;
+	}
+}
+.mobile-screen{
+	padding: 0;
+}
+@media(max-width:768px) {
+	.chat_list{
+		position: fixed;
+		left: 0px;
+		top: 6.2rem  !important;;
+		bottom: 3rem  !important;
+		height: auto;
+	}
+	.dlg_input{
+		border-top: 1px solid $color_1 !important;
+		position: fixed;
+		height: 3rem;
+		left: 0px;
+		width: 100% !important;
+		bottom: 0rem;
+	}
+	.mobile-screen{
+		position: fixed !important;
+		top: 3.3rem !important;
+		left: 0px !important;
+		bottom: 0px !important;
+		background: $color_3;
+		border-radius: 0 !important;
+		padding: 0 !important;
+		width: 100%  !important;
+		min-height: 100vh;
+		margin:0 !important;
+		max-height: 100% !important;
+		overflow: auto !important;
+		.row{
+			margin: 0 !important;
+		}
+	}
+	.heading-text {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.avatar-mobile {
+		width: 30%;
+		margin-right: 1rem;
+		overflow: hidden;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 50% !important;
+	}
+	.header-avatar {
+		max-width: 100px;
+	}
+	.for-desktop {
+		display: none;
+	}
+	.full-width {
+		width: 50% !important;
+	}
+	.featurette-divider {
+		margin: 0.5rem 0;
+	}
+}
+.btn{
+	font-size: inherit;
+}
+.btn-primary {
+	white-space: nowrap;
+	background: $color_12;
+	color: $color_3 !important;
+	border: 0;
+        padding: 5px;
+	&.hover {
+		background: $color_11 !important;
+		border: 0;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0;
+	}
+	&:hover {
+		background: $color_11 !important;
+		border: 0;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0;
+	}
+	&.focus {
+		background: $color_11 !important;
+		border: 0;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0;
+	}
+	&:focus {
+		background: $color_11 !important;
+		border: 0;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0;
+	}
+}
+.card {
+	background: $color_3;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 0px;/*4px*/
+	border: 0;
+	/*border-bottom: 2px solid $color_7;*/
+	/*border-right: 2px solid $color_7;*/
+}
+.card-body {
+	/*padding: 0 0.6rem 0 0.6rem!important;*/
+	/*height: auto !important;*/
+	padding: 8px;
+}
+.card-auth {
+/*	padding: 2rem;*/
+}
+.header-text {
+	color: $color_13;
+}
+.form-input {
+	border: 2px;
+	border-bottom: 1px solid $color_14;
+}
+.no-out {
+	outline: none !important;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none !important;
+	&:focus {
+		outline: none !important;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+	}
+}
+.hcenter{
+    position: absolute;
+    top: 50%;
+    height: 20px;
+}
+.data-search-icon{
+	color: $color_4;
+}
+.data-search{
+	height: 3rem;
+	width: 100%;
+	background: $color_3;
+	color: $color_2;
+	padding-left: 1rem;
+	border: 0;
+        /*border-bottom: 1px solid $color_8;*/
+}
+
+.input-search {
+	width: 100%;
+        height: 2.4rem;
+	background: transparent;
+	color: $color_13;
+	padding-left: 1rem;
+	border: 0;
+}
+.badge {
+	margin-left: 10px;
+}
+.shadow {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 2px 2px 0 $color_7, 0 3px 1px -2px $color_8, 0 1px 5px 0 $color_9;
+}
+.main-icons {
+	color: $color_3;
+}
+.clear {
+	clear: fix;
+}
+.lefted {
+	text-align: left;
+}
+.centered {
+	text-align: center;
+}
+.dblock {
+	display: block;
+}
+.dflex {
+	display: block;
+	&:hover {
+		.audio_row {
+			display: block;
+		}
+		.audio_row_cover_back {
+			background-color: $color_18;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: background-color 60ms linear;
+		}
+	}
+}
+.list-group-item-action > i{
+	color: $color_2;
+}
+.list-group-item{
+	font-size: 14px;
+	border: 0px;
+	padding: 0.35rem 0.8rem;
+	background-color:transparent;
+/*	border: 0px;
+	border-top: 1px solid $color_9;
+	border-bottom: 1px solid $color_9;*/
+}
+.main-menu-item {
+	border-right: 1px solid $color_2;
+}
+.full-width {
+	width: 100% !important;
+}
+.separator-leftm {
+	margin-left: 2rem !important;
+	position: absolute;
+}
+.separator-left {
+	padding-left: 2rem;
+}
+.separator-in{
+    padding: 1rem;
+}
+.separator-in-top {
+	padding-top: 1rem;
+}
+.separator-top {
+	margin-top: 1rem;
+}
+.warn {
+	color: $color_15;
+}
+.fleft {
+	float: left;
+}
+.fright {
+	float: right;
+}
+.righted{
+	text-align: right;
+}
+.profile-counter {
+	
+	color: $color_16;
+}
+.post_btn {
+	margin-right: 7px;
+        /*color: $color_2;*/
+        /*text-shadow: 1px 1px 2px $color_2;*/
+}
+.post_card_lefted {
+	margin-left: 12px;
+}
+.music_card_lefted {
+	padding-left: 55px;
+	width: 100%;
+}
+.dropdown-toggle::before {
+	display: inline-block;
+	width: 22px;
+	margin-left: 0;
+	vertical-align: 0;
+	border: 0;
+}
+.ui_actions_menu_icons {
+	top: 20px;
+	right: 18px;
+	background-image: $url_0;
+}
+.nwrap {
+	word-wrap: break-word;
+	white-space: nowrap;
+	/*max-width: 90%;*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.audio_row {
+	background-image: $url_1;
+	display: none;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+#album {
+	border: 1px solid $color_17;
+	padding: 0px;/*3px*/
+}
+.featurette-image{
+    width: 350px;
+}
+.rotate_back {
+	animation:rotate 6s linear infinite;
+}
+@keyframes rotate {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform:rotate(360deg); 
+	} 
+}
+.audio_pause {
+	animation: pause 5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+	display: block;
+	background-image: $url_2;
+}
+@keyframes pause {
+	0% {
+		opacity: 0.9;
+	}
+	50% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 0.9;
+	}
+}
+.audio_row_cover_back {
+	background-color: transparent;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: background-color 60ms linear;
+}
+.post_author {
+	color: $color_19;
+	font-weight: 500;
+}
+.friend-separator{
+	margin: 0.6rem -10px 0.6rem;
+}
+.post-separator {
+	margin: 15px -0.6rem;
+}
+/*
+::-webkit-scrollbar-thumb:vertical {
+	height: 30px;
+	background-color: $color_2;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 30px;
+}
+*/
+.btn-main-menu:focus {
+	outline: 0;
+}
+.no_out:hover {
+	outline: none !important;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+}
+input:-webkit-autofill {
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: background-color 5000s ease-in-out 0s;
+	&:hover {
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: background-color 5000s ease-in-out 0s;
+	}
+	&:focus {
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: background-color 5000s ease-in-out 0s;
+	}
+	&:active {
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: background-color 5000s ease-in-out 0s;
+	}
+}
+.dropleft .dropdown-toggle::before {
+	display: inline-block;
+	width: 22px;
+	margin-left: 0;
+	vertical-align: 0;
+	border: 0;
+}
